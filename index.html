@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+
+<div class="login-panel">
+ <div class="content">
+  <div class="profile">
+    <img class="image" src="avatar.svg">
+  </div>
+  <div class="input-data">
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button class="login">Login</button>
+  </div>
+ </div>
+</div>
+
+</body>
+</html>
+
+<style>
+
+.content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%; left: 50%;
+}
+
+.profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: fade 1s;
+}
+
+.profile .image {
+  width: 150px;
+}
+
+.input-data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  animation: fade 1s;
+}
+
+.input-data input {
+  width: 230px;
+  margin: 15px 0;
+  padding: 5px 0;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid gray;
+}
+
+.input-data input:focus {
+  border-color: #2dad80;
+}
+
+button[class=login] {
+  width: 230px;
+  height: 36px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: #32be8f;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+button[class=login]:hover {
+  background: #2dad80;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .content {
+    display: flex;
+    width: 420px;
+  }
+  .login-panel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile {
+    margin-top: 35px;
+  }
+}
+
+</style>
+<script>
+
+username = document.querySelector("input[type=text]");
+password = document.querySelector("input[type=password]");
+
+username.addEventListener('keyup', ()=> {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    password.focus();
+  }
+});
+
+</script>
