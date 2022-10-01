@@ -1,0 +1,16 @@
+<body>
+
+<input class="searchInput">
+<button onclick="cari()">Cari</button>
+
+</body>
+
+<script>
+
+searchInput = socument.querySelector(".searchInput");
+
+function cari() {
+  window.location.href = `/search?q=${searchInput.value}`;
+}
+
+</script>
